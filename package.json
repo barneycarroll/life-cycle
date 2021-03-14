@@ -1,0 +1,27 @@
+{
+  "name": "life-cycle",
+  "version": "1.0.0-rc.1",
+  "description": "A no-op custom element which exposes lifecycle hooks to consuming view frameworks",
+  "main": "life-cycle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barneycarroll/life-cycle.git"
+  },
+  "keywords": [
+    "dom",
+    "view",
+    "lifecycle",
+    "hooks",
+    "custom-element",
+    "web-component"
+  ],
+  "author": "Barney Carroll <barney.carroll@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/barneycarroll/life-cycle/issues"
+  },
+  "homepage": "https://github.com/barneycarroll/life-cycle#readme"
+}
