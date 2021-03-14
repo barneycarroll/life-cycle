@@ -17,7 +17,7 @@ class LifeCycle extends HTMLElement {
   }
   
   attributeChanged(){}
-  attributeChangedCallback(x,y,z){
+  attributeChangedCallback(){
     this.attributeChanged.apply(this, arguments)
   }
   
