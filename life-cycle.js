@@ -6,13 +6,13 @@ class LifeCycle extends HTMLElement {
     this.connected.apply(this, arguments)
   }
 
-  disconnected() { }
-  disconnectedCallback() {
+  disconnected(){}
+  disconnectedCallback(){
     this.disconnected.apply(this, arguments)
   }
 
-  adopted() { }
-  adoptedCallback() {
+  adopted(){}
+  adoptedCallback(){
     this.adopted.apply(this, arguments)
   }
   
