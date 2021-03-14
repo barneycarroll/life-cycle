@@ -1,5 +1,5 @@
 {
-  "name": "life-cycle",
+  "name": "@barneycarroll/life-cycle",
   "version": "1.0.0-rc.1",
   "description": "A no-op custom element which exposes lifecycle hooks to consuming view frameworks",
   "main": "life-cycle.js",
