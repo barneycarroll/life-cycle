@@ -21,6 +21,10 @@ class LifeCycle extends HTMLElement {
     this.attributeChanged.apply(this, arguments)
   }
   
+  get updated(callback){
+    updated.call(this)
+  }
+  
   static get observedAttributes(){
     return ['attribute']
   }
