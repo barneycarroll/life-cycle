@@ -2,6 +2,17 @@
 
 `<life-cycle/>` is a [custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for framework-agnostic lifecycle hooks. 
 
+```html
+<!-- Can be included as a pre-defined element under the `life-cycle` namespace: -->
+<script src=@barneycarroll/life-cycle/defined.js></script>
+<!-- Or imported as a class for extension, manipulation and / or definition under a name of your choice: -->
+<script type=module>
+  import LifeCycle from '@barneycarroll/life-cycle/module.js'
+  
+  customElements.define('life-cycle', LifeCycle)
+</script>
+```
+
 ## What?
 
 The various view frameworks of the world have different APIs of exposing the underlying DOM nodes & fundamental entity lifecycle (create, update, destroy) - some don't expose any at all. `<life-cycle/>` forwards each of the DOM [lifecycle callbacks](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#using_the_lifecycle_callbacks_) to corresponding property methods declared on instantiation, allowing CRUD directives and access to local DOM objects. Meanwhile, it applies a style of `display:contents` so as not to affect rendering. 
