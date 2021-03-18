@@ -16,8 +16,9 @@ Each lifecycle method on the custom element prototype will call corresponding pr
 |`disconnectedCallback`     |`disconnected`    
 |`adoptedCallback`          |`adopted`         
 |`attributeChangedCallback` |`attributeChanged`
+||`updated`
 
-Because `attributeChanged` requires that observed attributes be determined ahead of time, we reserve an attribute called simply `attribute` to trigger its execution.
+Because `attributeChanged` requires that observed attributes be determined ahead of time, we reserve an attribute called simply `attribute` to trigger its execution. An `updated` property consumes a function which is executed whenever it is set, exposing the element instance as `this`; these allow the element to respond to declarative updates.
 
 ## Why?
 
