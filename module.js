@@ -1,4 +1,4 @@
-class LifeCycle extends HTMLElement {
+export default class LifeCycle extends HTMLElement {
   connected(){}
   connectedCallback(){
     this.style.display = 'contents'
@@ -21,9 +21,11 @@ class LifeCycle extends HTMLElement {
     this.attributeChanged.apply(this, arguments)
   }
   
+  get updated(callback){
+    updated.call(this)
+  }
+  
   static get observedAttributes(){
     return ['attribute']
   }
 }
-
-customElements.define('life-cycle', LifeCycle)

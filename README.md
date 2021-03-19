@@ -2,6 +2,17 @@
 
 `<life-cycle/>` is a [custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for framework-agnostic lifecycle hooks. 
 
+```html
+<!-- Can be included as a pre-defined element under the `life-cycle` namespace: -->
+<script src=@barneycarroll/life-cycle/defined.js></script>
+<!-- Or imported as a class for extension, manipulation and / or definition under a name of your choice: -->
+<script type=module>
+  import LifeCycle from '@barneycarroll/life-cycle/module.js'
+  
+  customElements.define('life-cycle', LifeCycle)
+</script>
+```
+
 ## What?
 
 The various view frameworks of the world have different APIs of exposing the underlying DOM nodes & fundamental entity lifecycle (create, update, destroy) - some don't expose any at all. `<life-cycle/>` forwards each of the DOM [lifecycle callbacks](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#using_the_lifecycle_callbacks_) to corresponding property methods declared on instantiation, allowing CRUD directives and access to local DOM objects. Meanwhile, it applies a style of `display:contents` so as not to affect rendering. 
@@ -16,8 +27,9 @@ Each lifecycle method on the custom element prototype will call corresponding pr
 |`disconnectedCallback`     |`disconnected`    
 |`adoptedCallback`          |`adopted`         
 |`attributeChangedCallback` |`attributeChanged`
+||`updated`
 
-Because `attributeChanged` requires that observed attributes be determined ahead of time, we reserve an attribute called simply `attribute` to trigger its execution.
+Because `attributeChanged` requires that observed attributes be determined ahead of time, we reserve an attribute called simply `attribute` to trigger its execution. An `updated` property consumes a function which is executed whenever it is set, exposing the element instance as `this`; these allow the element to respond to declarative updates.
 
 ## Why?
 
